@@ -14,11 +14,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("Localisation Axians");
 
-        Button button6 = (Button) findViewById(R.id.connect);
-        button6.setOnClickListener(new View.OnClickListener() {
+        Button connect = (Button) findViewById(R.id.buttonc);
+        connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button locate = (Button) findViewById(R.id.buttonl);
+       locate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
                 startActivity(intent);
             }
         });

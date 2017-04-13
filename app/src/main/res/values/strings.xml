@@ -17,4 +17,6 @@
     </string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_login2">Sign in</string>
+    <string name="title_activity_maps2">Map</string>
+    <string name="google_maps_key">AIzaSyA7pKR2ruzkSj5RDA_jfzUrTrzwHAxxzkA</string>
 </resources>
