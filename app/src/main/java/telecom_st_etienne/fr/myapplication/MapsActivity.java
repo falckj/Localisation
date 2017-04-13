@@ -1,7 +1,10 @@
 package telecom_st_etienne.fr.myapplication;
 
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -12,6 +15,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    private static final int MY_LOCATION_REQUEST_CODE = 1;
     private GoogleMap mMap;
 
     @Override
@@ -39,8 +43,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
+        LatLng sydney = new LatLng(45.452796, 4.387958);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            mMap.setMyLocationEnabled(true);
+        } else {
+            // Show rationale and request permission.
+        }
     }
+
+
 }
+
