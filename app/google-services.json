@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "612896463802",
+    "project_id": "localisation-axians"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612896463802:android:e173839528532e3c",
+        "android_client_info": {
+          "package_name": "telecom_st_etienne.fr.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612896463802-s8roccr05i2det76tpk7sshqjvnuk84f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "telecom_st_etienne.fr.myapplication",
+            "certificate_hash": "56f0257caab223557db63079274a0b2b47cf29f9"
+          }
+        },
+        {
+          "client_id": "612896463802-990rkk81popsd33hgfmrf11sjlsiqejc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGdOliF-noYLihQph6s2v4nxIxhjmS14E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
