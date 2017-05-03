@@ -1,6 +1,10 @@
 apply plugin: 'com.android.application'
 //apply plugin: 'com.google.gms.google-services'
 
+dependencies {
+    compile 'com.google.android.gms:play-services-auth:9.8.0'
+}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"

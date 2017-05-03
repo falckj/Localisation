@@ -23,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button locate = (Button) findViewById(R.id.buttonl);
+
+       Button locate = (Button) findViewById(R.id.buttonl);
        locate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,5 +32,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        Button photo = (Button) findViewById(R.id.buttonp);
+        photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Image.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
