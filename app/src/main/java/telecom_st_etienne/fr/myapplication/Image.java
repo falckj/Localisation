@@ -17,12 +17,17 @@ import android.view.View.OnClickListener;
 public class Image extends AppCompatActivity {
     Button button;
     ImageView image;
+    Draw view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image);
+        view = new Draw(this);
+        setContentView(view);
+    }
+}
 
+/*
         BitmapFactory.Options myOptions = new BitmapFactory.Options();
         myOptions.inDither = true;
         myOptions.inScaled = false;
@@ -44,7 +49,6 @@ public class Image extends AppCompatActivity {
         iv.setImageResource(R.drawable.photo_android);
         iv.setAdjustViewBounds(true);
         iv.setImageBitmap(mutableBitmap);
-        setContentView(new Draw(this));
-    }
+        //setContentView(new Draw(this));
 
-}
+    }*/
