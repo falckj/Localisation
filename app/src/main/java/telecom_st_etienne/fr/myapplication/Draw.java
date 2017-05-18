@@ -1,9 +1,79 @@
 package telecom_st_etienne.fr.myapplication;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.view.View;
+
 /**
  * Created by Jeremy Falck on 03/05/2017.
  */
-import android.app.Activity;
+class Draw extends View {
+    //public    Paint c;
+    public  Paint p;
+
+    private static final int RADIUS = 46;
+
+    private int centerX;
+    private int centerY;
+    private int speedX = 10;
+    private int speedY = 10;
+    private int positionX;
+    private int positionY;
+    public Bitmap test;
+    //private Paint paint; // Создай его где-нибудь там в конструкторе
+
+
+    public Draw(Context context){
+        super(context);
+        p = new Paint();
+        p.setColor(Color.GREEN);
+        test = BitmapFactory.decodeResource(getResources(), R.drawable.evacuationplan);
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldW, int oldH) {
+        centerX = w / 2;
+        centerY = h / 2;
+    }
+
+    protected void onDraw(Canvas c) {
+        int w = getWidth();
+        int h = getHeight();
+        centerX += speedX; //centerX = positionX
+        centerY += speedY; //centerY = positionY
+        int rightLimit = w - RADIUS;
+        int bottomLimit = h - RADIUS;
+
+        if (centerX >= rightLimit) {
+            centerX = rightLimit;
+            speedX *= -1;
+        }
+        if (centerX <= RADIUS) {
+            centerX = RADIUS;
+            speedX *= -1;
+        }
+        if (centerY >= bottomLimit) {
+            centerY = bottomLimit;
+            speedY *= -1;
+        }
+        if (centerY <= RADIUS) {
+            centerY = RADIUS;
+            speedY *= -1;
+        }
+        c.drawBitmap(test, 0, 0, null);
+        c.drawCircle(centerX, centerY, RADIUS, p);
+        postInvalidateDelayed(10);
+    }
+
+
+
+}
+/*import android.app.Activity;
 import android.bluetooth.BluetoothA2dp;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
@@ -27,26 +97,69 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Draw extends View {
-    private Paint paint;
+    //private Paint paint;
     Bitmap test;
+    public Paint paint;
 
+    private static final int RADIUS = 46;
+
+    private int centerX;
+    private int centerY;
+    private int speedX = 50;
+    private int speedY = 40;
 
     public Draw(Context context) {
         super(context);
         test = BitmapFactory.decodeResource(getResources(), R.drawable.evacplan);
-
+        Paint paint = new Paint();
+        paint.setColor(Color.MAGENTA);
     }
+    @Override
+    protected void onSizeChanged(int w, int h, int oldW, int oldH) {
+        centerX = w / 2;
+        centerY = h / 2;
+    }
+    protected void onDraw(Canvas c) {
+        int w = getWidth();
+        int h = getHeight();
+        centerX += speedX;
+        centerY += speedY;
+        int rightLimit = w - RADIUS;
+        int bottomLimit = h - RADIUS;
+
+        if (centerX >= rightLimit) {
+            centerX = rightLimit;
+            speedX *= -1;
+        }
+        if (centerX <= RADIUS) {
+            centerX = RADIUS;
+            speedX *= -1;
+        }
+        if (centerY >= bottomLimit) {
+            centerY = bottomLimit;
+            speedY *= -1;
+        }
+        if (centerY <= RADIUS) {
+            centerY = RADIUS;
+            speedY *= -1;
+        }
+
+        c.drawCircle(centerX, centerY, RADIUS, paint);
+        postInvalidateDelayed(200);
+    }
+}
+
 
     @Override
     protected void onDraw(Canvas canvas) {
 
         paint = new Paint();
         paint.setColor(Color.MAGENTA);
-
+        canvas.drawBitmap(test, 0, 0, null);
         int x = 200;
         int y = 200;
         super.onDraw(canvas);
-        canvas.drawBitmap(test, 0, 0, null);
+
         canvas.drawCircle(x, y, 20, paint);
 
         long starttime = 0;
@@ -61,7 +174,7 @@ public class Draw extends View {
             }
         }
     }
-}/*
+}
         super.onDraw(canvas);
         canvas.drawBitmap(test, 0, 0, null);
         canvas.drawCircle(x+1, y+1, 20, paint);

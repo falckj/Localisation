@@ -15,8 +15,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 public class Image extends AppCompatActivity {
-    Button button;
-    ImageView image;
+    //Button button;
+    //ImageView image;
     Draw view;
 
     @Override

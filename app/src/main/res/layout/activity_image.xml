@@ -5,14 +5,5 @@
     android:orientation="vertical"
     android:weightSum="1">
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:scaleType = "centerCrop"
-        android:layout_width="wrap_content"
-        android:src="@drawable/evacplan"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:adjustViewBounds="true" />
-
 
 </FrameLayout>
