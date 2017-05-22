@@ -1,31 +1,28 @@
 package telecom_st_etienne.fr.myapplication;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.util.Log;
-import android.widget.Toast;
 
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Random;
 
 
+import telecom_st_etienne.fr.myapplication.UsefulMethods.BaseClass;
+import telecom_st_etienne.fr.myapplication.UsefulMethods.ConfigReader;
+import telecom_st_etienne.fr.myapplication.UsefulMethods.HTTPMethods;
 
 import static android.content.ContentValues.TAG;
 
-public class MapRetrieval extends BaseClass{
+public class MapRetrieval extends BaseClass {
 
 	public static void main(String[] args) {
 		try {

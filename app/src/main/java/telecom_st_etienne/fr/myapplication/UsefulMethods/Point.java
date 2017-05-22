@@ -1,4 +1,4 @@
-package telecom_st_etienne.fr.myapplication;
+package telecom_st_etienne.fr.myapplication.UsefulMethods;
 
 public class Point {
 

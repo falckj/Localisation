@@ -1,9 +1,8 @@
-package telecom_st_etienne.fr.myapplication;
+package telecom_st_etienne.fr.myapplication.UsefulMethods;
 
 //import com.sun.org.apache.xml.internal.security.utils.Base64;
 
 
-import android.text.TextUtils;
 import android.util.Base64;
 
 import org.ini4j.Ini;
@@ -18,9 +17,8 @@ import java.net.HttpURLConnection;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.URL;
-import java.util.Collection;
 import java.util.Enumeration;
-import java.util.List;
+
 
 public class BaseClass {
 
@@ -48,13 +46,14 @@ public class BaseClass {
 	
 	protected static void setVariables(){
 
-		/* ----- D�but de lecture du fichier de config -----*/
+		/* ----- Debut de lecture du fichier de config -----*/
 		String[] List ={username,password };
-		TextUtils text = TextUtils.join(":", List );
 		mse_ip = config.get("mse", "mse_ip");
 		username = config.get("mse", "username");
 		password = config.get("mse", "password");
-		authentication = Base64.encode(TextUtils.join(":", List ).getBytes());
+		String base_auth = username + ":" + password;
+        byte[] base_auth_bytes = base_auth.getBytes();
+		byte[] authentication = Base64.encode(base_auth_bytes, Base64.DEFAULT);
 		url_suffix = config.get("mse", "url_suffix");
 		mac = config.get("local", "mac");
 		response_format = config.get("local", "response_format");

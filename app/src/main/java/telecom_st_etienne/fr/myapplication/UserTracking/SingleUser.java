@@ -1,12 +1,12 @@
-package telecom_st_etienne.fr.myapplication;
+package telecom_st_etienne.fr.myapplication.UserTracking;
 
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import telecom_st_etienne.fr.myapplication.BaseClass;
-import telecom_st_etienne.fr.myapplication.ConfigReader;
-import telecom_st_etienne.fr.myapplication.Point;
+import telecom_st_etienne.fr.myapplication.UsefulMethods.BaseClass;
+import telecom_st_etienne.fr.myapplication.UsefulMethods.ConfigReader;
+import telecom_st_etienne.fr.myapplication.UsefulMethods.Point;
 
 public class SingleUser extends BaseClass {	
 	
