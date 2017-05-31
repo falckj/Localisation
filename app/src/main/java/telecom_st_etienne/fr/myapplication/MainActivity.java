@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import telecom_st_etienne.fr.myapplication.pathfinder.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("Localisation Axians");
+
+        // Définition du rôle de chaque bouton de l'écran d'accueil
 
         Button connect = (Button) findViewById(R.id.buttonc);
         connect.setOnClickListener(new View.OnClickListener() {
@@ -24,24 +27,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-       Button locate = (Button) findViewById(R.id.buttonl);
-       locate.setOnClickListener(new View.OnClickListener() {
+
+        Button locate = (Button) findViewById(R.id.buttonp);
+        locate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+                Intent intent = new Intent(MainActivity.this, Localisation.class);
                 startActivity(intent);
             }
         });
 
-
-        Button photo = (Button) findViewById(R.id.buttonp);
-        photo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Image.class);
-                startActivity(intent);
-            }
-        });
+        //Dijkstra dij = new Dijkstra();
 
     }
 }

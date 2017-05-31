@@ -21,4 +21,5 @@
     <string name="server_client_id">612896463802-990rkk81popsd33hgfmrf11sjlsiqejc.apps.googleusercontent.com</string>
     <string name="sign_in_with_google">Sign in with Google</string>
     <string name="log_out">Log out</string>
+    <string name = "search_hint">Checher un lieu</string>
 </resources>

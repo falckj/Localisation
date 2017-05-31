@@ -31,8 +31,8 @@ public class MapRetrieval extends BaseClass {
 			System.err.println("Erreur lors de l'ouverture du fichier.");
 		} 
 		
-		setVariables();
-		
+		setVariables("locate");
+
 		String url = url_prefix + mse_ip + url_suffix;
 		HTTPMethods.SSLHandler();
 		try {

@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 
 dependencies {
     compile 'com.google.android.gms:play-services-auth:9.8.0'
+
 }
 
 android {
@@ -15,6 +16,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
     }
     buildTypes {
         release {

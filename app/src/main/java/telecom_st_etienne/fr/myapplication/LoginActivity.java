@@ -61,10 +61,7 @@ public class LoginActivity extends AppCompatActivity implements
         // Connect our sign in, sign out and disconnect buttons.
         findViewById(R.id.sign_in_button).setOnClickListener(this);
         findViewById(R.id.sign_out_button).setOnClickListener(this);
-        /*findViewById(R.id.revoke_access_button).setOnClickListener(this);
-        findViewById(R.id.sign_out_button).setVisibility(View.INVISIBLE);
-        findViewById(R.id.revoke_access_button).setVisibility(View.INVISIBLE);
-        */
+
         // Configure the ProgressDialog that will be shown if there is a
         // delay in presenting the user with the next sign in step.
         mConnectionProgressDialog = new ProgressDialog(this);
@@ -153,26 +150,7 @@ public class LoginActivity extends AppCompatActivity implements
                             }
                         });
                 break;
-            /*
-            case R.id.revoke_access_button:
-                Log.v(TAG, "Tapped disconnect");
-                // Go away and revoke access to this entire application.
-                Auth.GoogleSignInApi.revokeAccess(mGoogleApiClient).setResultCallback(
-                        new ResultCallback<Status>() {
-                            @Override
-                            public void onResult(@NonNull Status status) {
-                                // The GoogleApiClient is now disconnected and access has been
-                                // revoked. We should now delete any data we need to comply with
-                                // the developer properties.
 
-                                // Hide the sign out buttons, show the sign in button.
-                                findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
-                                findViewById(R.id.sign_out_button).setVisibility(View.INVISIBLE);
-                                findViewById(R.id.revoke_access_button).setVisibility(View.INVISIBLE);
-                            }
-                        });
-                break;
-                */
             default:
                 // Unknown id.
                 Log.v(TAG, "Unknown button press");

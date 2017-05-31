@@ -29,16 +29,6 @@
 
         <Button
             android:layout_gravity="center"
-            android:text="Se localiser"
-            android:layout_height="wrap_content"
-            android:id="@+id/buttonl"
-            android:layout_marginTop="120dp"
-            android:layout_below="@+id/textView2"
-            android:layout_centerHorizontal="true"
-            android:layout_width="200dp" />
-
-        <Button
-            android:layout_gravity="center"
             android:text="Connexion"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -48,7 +38,7 @@
             android:layout_centerHorizontal="true" />
 
         <Button
-            android:text="Photo"
+            android:text="Se Localiser"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:id="@+id/buttonp"
