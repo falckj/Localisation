@@ -24,9 +24,9 @@ import static android.content.ContentValues.TAG;
 
 public class MapRetrieval extends BaseClass {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		try {
-			config = ConfigReader.readConfig("./configs/config3.ini");
+			config = ConfigReader.readConfig("R.raw.config3");
 		} catch (Exception e) {
 			System.err.println("Erreur lors de l'ouverture du fichier.");
 		} 

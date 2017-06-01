@@ -22,6 +22,9 @@ import android.view.View.OnClickListener;
 public class LoginActivity extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener, OnClickListener {
 
+    //Activité d'enregistrement, prise uniquement en charge avec Google. Pour mettre en place un autre moyen d'authentification
+    //il faudra changer l'interface graphique et le rôle de ses composants en fonction.
+
     private static final String TAG = "SignInTestActivity";
 
     // A magic number we will use to know that our sign-in error

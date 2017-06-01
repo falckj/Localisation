@@ -7,14 +7,16 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.location.Criteria;
+import android.location.LocationManager;
+import android.location.LocationProvider;
 import android.view.View;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import telecom_st_etienne.fr.myapplication.UsefulMethods.Point;
-import telecom_st_etienne.fr.myapplication.UserTracking.Test;
 
 /**
  * Created by Jeremy Falck on 03/05/2017.
@@ -30,6 +32,7 @@ class Draw extends View {
     private int centerY;
     //private int X = (int) position.getX();
     //private int Y = (int) position.getY();
+    // Position (X,Y) donnée par le CMX et récupérée par la classe SingleUser
     private int X=50;
     private int Y=500;
     private int speedX = 10;
@@ -38,16 +41,19 @@ class Draw extends View {
     private int positionX;
     private int positionY;
     public Bitmap test;
+
+
     //private Paint paint; // Создай его где-нибудь там в конструкторе
+    //TODO Mettre à l'échelle les coordonnées du point par rapport aux dimensions de l'image affdfichée sur le téléphone.
 
 
     public Draw(Context context) throws IOException {
         super(context);
+        //Couleur du cercle de la position
         p = new Paint();
         p.setColor(Color.BLUE);
+        //importation de l'image plan_ecole.png
         test = BitmapFactory.decodeResource(getResources(), R.drawable.plan_ecole);
-        //Test test = new Test(context);
-
     }
 
     @Override
@@ -58,19 +64,19 @@ class Draw extends View {
     }
 
     protected void onDraw(Canvas c) {
-       /* List<String> text = new ArrayList<String>();
-        text.add("test1");
-        text.add("test2");*/
+
 
 
         int w = getWidth();
         int h = getHeight();
+        //Test d'évolution des coordonnées pour un affichage dynamique
         X++;
         Y--;
-        centerX += speedX; //centerX = positionX
-        centerY += speedY; //centerY = positionY
-        int rightLimit = w - RADIUS;
-        int bottomLimit = h - RADIUS;
+        //TODO Récupérer des nouvelles coordonnées sur le CMX pour faire changer la position du point
+        //centerX += speedX; //centerX = positionX
+        //centerY += speedY; //centerY = positionY
+        //int rightLimit = w - RADIUS;
+        //int bottomLimit = h - RADIUS;
         /*
         if (centerX >= rightLimit) {
             centerX = rightLimit;
@@ -91,13 +97,11 @@ class Draw extends View {
         Rect dest = new Rect(0, 0, getWidth(), getHeight());
         Paint paint2 = new Paint();
         paint2.setFilterBitmap(true);
-        /*Paint paint3 = new Paint();
-        paint3.setColor(Color.RED);
-        paint3.setTextSize(100);*/
-        //c.drawBitmap(test, 0, 0, null);
+
+        //dessin du plan
         c.drawBitmap(test, null, dest, paint2);
+        //dessin du cercle traduisant la position
         c.drawCircle(X, Y, RADIUS, p);
-        //c.drawText(text.get(i++%2), centerX-70, centerY, paint3);
 
         postInvalidateDelayed(50);
 

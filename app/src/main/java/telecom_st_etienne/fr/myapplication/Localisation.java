@@ -24,10 +24,10 @@ import java.io.IOException;
 import telecom_st_etienne.fr.myapplication.pathfinder.Dijkstra;
 
 public class Localisation extends AppCompatActivity {
-    //Button button;
-    //ImageView image;
+    //Dessin de la carte dans cette activité
     Draw view;
 
+    // méthode pour récupérer la destination entrée par l'utilisateur dans la barre de recherche
     public String doMySearch(String key){
         return key;
     }
@@ -36,11 +36,14 @@ public class Localisation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
+            //Lancement du dessin de la carte
             view = new Draw(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //affichage du dessin
         setContentView(view);
+        //Titre de l'activité qui sera affiché à l'écran
         setTitle("Carte du Bâtiment");
 
 
@@ -48,6 +51,7 @@ public class Localisation extends AppCompatActivity {
 
     }
     @Override
+    //Méthode d'affichage de la barre de recherche lors d'un clic sur la loupe
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu, menu);
         // Associate searchable configuration with the SearchView

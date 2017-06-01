@@ -5,8 +5,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-
 import org.ini4j.*;
+
+import telecom_st_etienne.fr.myapplication.R;
 
 public class ConfigReader {
 

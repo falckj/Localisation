@@ -1,7 +1,7 @@
 package telecom_st_etienne.fr.myapplication.UsefulMethods;
 
 //import com.sun.org.apache.xml.internal.security.utils.Base64;
-
+//test
 
 import android.util.Base64;
 
@@ -45,9 +45,10 @@ public class BaseClass {
     protected static char[] charArray = new char[1024];
     protected static StringBuffer sb = new StringBuffer();
 
-    protected static void setVariables(String function) {
+    protected static void setVariables(String filepath) throws IOException {
 
 		/* ----- Debut de lecture du fichier de config -----*/
+        //config = ConfigReader.readConfig(filepath);
         String[] List = {username, password};
         mse_ip = config.get("mse", "mse_ip");
         username = config.get("mse", "username");
