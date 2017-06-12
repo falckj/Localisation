@@ -48,6 +48,10 @@ public class BaseClass {
     protected static void setVariables(String filepath) throws IOException {
 
 		/* ----- Debut de lecture du fichier de config -----*/
+		/*
+		* Permet d'initialiser les données d'authentification pour la 
+		* connexion au CMX et donc récupérer les données de localisation
+		*/
         //config = ConfigReader.readConfig(filepath);
         String[] List = {username, password};
         mse_ip = config.get("mse", "mse_ip");
@@ -107,7 +111,11 @@ public class BaseClass {
         }
     }
 
-
+	/*
+	* Etablit une connexion avec l'URL donnée par les infos d'authentification.
+	* Ensuite, on récupère les données de localisation sous format JSON
+	*/
+	
     public static JSONObject getResponse(String url) throws NullPointerException {
 
         JSONObject json = null;
@@ -172,7 +180,11 @@ public class BaseClass {
         }
         return address;
     }
-
+	
+	/*
+	* Récupère les coordonnées d'un utilisateur
+	*/
+	
     public static Object getInformation(String url,UserOptions option){
         JSONObject json = getResponse(url);
         switch(option){
@@ -222,5 +234,3 @@ public class BaseClass {
         return null;
     }
 }
-
-	//TODO Fonctions manquantes, ajouter depuis le dépôt GitHub
