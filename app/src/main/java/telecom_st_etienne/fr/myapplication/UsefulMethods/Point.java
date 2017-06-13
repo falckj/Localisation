@@ -1,5 +1,9 @@
 package telecom_st_etienne.fr.myapplication.UsefulMethods;
 
+/*
+* Sert à stocker les coordonnées d'un utilisateur
+*/
+
 public class Point {
 
 	public Point(double x, double y){
