@@ -147,6 +147,10 @@ public class BaseClass {
         return json;
     }
 
+    /*
+    * On sauvegarde le fichier JSON dans un nouveau fichier dont le chemin est spécifié
+    */
+    
     public static void saveJSON(JSONObject json, String filename) {
         try (FileWriter file = new FileWriter(filename)) {
             file.write(json.toString(2));
@@ -156,6 +160,10 @@ public class BaseClass {
         }
     }
 
+    /*
+    * Permet de récupérer l'adresse MAC d'un utilisateur et donc d'identifier l'appareil
+    */
+	
     public static String retrieveMACAddress() {
         String address = null;
         try {
